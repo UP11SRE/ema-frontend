@@ -39,6 +39,12 @@ This project is a frontend application for data analysis built with React and Vi
 
 ## The application is currently deployed on Render at: https://analytics-frontend-mq5e.onrender.com
 
+# Backend Integration:
+
+- The Backend of this Frontend React App is hosted on: https://analytics-backend-odh4.onrender.com
+
+* Backend code repo: https://github.com/UP11SRE/analytics_backend.git
+
 ## Querying Data
 
 The Query functionality within the dashboard empowers you to perform various data analyses on your uploaded datasets. Here's a detailed guide on how to construct effective queries:
@@ -84,12 +90,6 @@ The Query functionality within the dashboard empowers you to perform various dat
 - Date comparisons are restricted to date columns.
 
 # By following these guidelines, you can effectively leverage the Query feature to extract valuable insights from your data.
-
-# Backend Integration:
-
-- The Backend of this Frontend React App is hosted on: https://analytics-backend-odh4.onrender.com
-
-* Backend code repo: https://github.com/UP11SRE/analytics_backend.git
 
 ## Project Overview Video
 
