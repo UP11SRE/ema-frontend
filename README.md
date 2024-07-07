@@ -89,6 +89,8 @@ The Query functionality within the dashboard empowers you to perform various dat
 
 - The Backend of this Frontend React App is hosted on: https://analytics-backend-odh4.onrender.com
 
+* Backend code repo: https://github.com/UP11SRE/analytics_backend.git
+
 ## Project Overview Video
 
 - For a visual explanation of this project, you can view a video walkthrough here: https://www.loom.com/share/5d9f22d342d04422b7387ccd65d783c8?sid=04541838-ed7f-4207-a9d9-7c07c6c54e60
