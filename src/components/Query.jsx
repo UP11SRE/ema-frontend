@@ -44,7 +44,6 @@ const Query = () => {
 
     token = token.split('=')[1];
 
-    console.log("token", token);
 
     try {
       const response = await axios.get(
@@ -55,7 +54,6 @@ const Query = () => {
         },
       );
       setTableData(response.data);
-      console.log('Query successful:', response.data);
 
       // Reset the form fields upon successful response
       setField1('');

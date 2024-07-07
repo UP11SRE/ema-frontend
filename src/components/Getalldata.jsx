@@ -13,7 +13,6 @@ const GetAll = () => {
 
     token = token.split('=')[1];
 
-    console.log("token", token);
 
     try {
       const response = await axios.get(
@@ -21,7 +20,7 @@ const GetAll = () => {
         { headers: { Authorization: `token ${token}` } },
       );
       setTableData(response.data);
-      console.log('Data fetch successful:', response.data);
+      //console.log('Data fetch successful:', response.data);
     } catch (error) {
       console.error('Data fetch failed:', error);
       // Handle data fetch errors (e.g., display error message)

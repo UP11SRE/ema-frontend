@@ -14,7 +14,6 @@ const Login = () => {
 
     try {
       const response = await loginUser({ username, password });
-      console.log('Login successful:', response.data);
 
       // Extract auth token from response (assuming it's in a specific field)
       const authToken = response.data.token; // Replace with actual token location

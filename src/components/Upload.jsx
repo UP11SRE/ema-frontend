@@ -21,7 +21,6 @@ const Upload = () => {
         { csv_url: link },
         { headers: { Authorization: `token ${token}` } } // Include auth token in header
       );
-      console.log('Upload successful:', response.data);
       // Display success message and refresh the page
       alert('Data uploaded successfully');
       window.location.reload(); // Refresh the page

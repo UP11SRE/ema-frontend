@@ -15,7 +15,6 @@ const Register = () => {
 
     try {
       const response = await registerUser({ username, email, password });
-      console.log('Registration successful:', response.data);
       navigate('/login'); // Redirect to login on successful registration
     } catch (error) {
       console.error('Registration failed:', error);
