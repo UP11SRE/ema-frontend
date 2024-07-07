@@ -15,7 +15,7 @@ const Dashboard = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="http://localhost:5173/dashboard">Home</Nav.Link>
+                <Nav.Link href="http://analytics-frontend-mq5e.onrender.com/dashboard">Home</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
