@@ -17,7 +17,7 @@ const Upload = () => {
 
     try {
       const response = await axios.post(
-        `${'http://127.0.0.1:8000'}/api/upload/`, // Replace with your upload endpoint
+        `${'https://analytics-backend-odh4.onrender.com'}/api/upload/`, // Replace with your upload endpoint
         { csv_url: link },
         { headers: { Authorization: `token ${token}` } } // Include auth token in header
       );

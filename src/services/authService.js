@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000"; // Replace with your Django API base URL
+const BASE_URL = "https://analytics-backend-odh4.onrender.com"; // Replace with your Django API base URL
 
 export const registerUser = async (userData) => {
   const response = await axios.post(`${BASE_URL}/api/register/`, userData);

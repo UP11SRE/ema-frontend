@@ -48,7 +48,7 @@ const Query = () => {
 
     try {
       const response = await axios.get(
-        `${'http://127.0.0.1:8000'}/api/get_data/`, // Replace with your query endpoint 
+        `${'https://analytics-backend-odh4.onrender.com'}/api/get_data/`, // Replace with your query endpoint 
         {
           params,
           headers: { Authorization: `token ${token}` }
