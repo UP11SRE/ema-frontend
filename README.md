@@ -43,7 +43,7 @@ This project is a frontend application for data analysis built with React and Vi
 
 The Query functionality within the dashboard empowers you to perform various data analyses on your uploaded datasets. Here's a detailed guide on how to construct effective queries:
 
-## For column names containing spaces (e.g., "Release Date"), enter them using underscores instead (e.g., "Release_Date"). This ensures proper query interpretation.
+## For column names containing spaces (e.g., "Release date"), enter them using underscores instead (e.g., "Release_date"). This ensures proper query interpretation.
 
 # Exact Matches
 
