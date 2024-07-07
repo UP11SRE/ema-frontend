@@ -3,6 +3,5 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/analytics-frontend-mq5e/",
   plugins: [react()],
 });
