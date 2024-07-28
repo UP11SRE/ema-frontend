@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+
 import { registerUser } from '../../services/authService'; // Import your API service
 
 const Register = () => {
@@ -14,9 +15,9 @@ const Register = () => {
     event.preventDefault();
 
     try {
-      const response = await registerUser({ username, email, password });
-      navigate('/login'); // Redirect to login on successful registration
-    } catch (error) {
+      const response = await registerUser({ username, email, password1 : password, password2 : password });
+      navigate('/login');
+   } catch (error) {
       console.error('Registration failed:', error);
       // Handle registration errors (e.g., display error message)
     }

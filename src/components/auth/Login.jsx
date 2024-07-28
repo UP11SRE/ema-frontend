@@ -16,7 +16,7 @@ const Login = () => {
       const response = await loginUser({ username, password });
 
       // Extract auth token from response (assuming it's in a specific field)
-      const authToken = response.data.token; // Replace with actual token location
+      const authToken = response.data.key; // Replace with actual token location
 
       // Save auth token in cookie
       saveAuthTokenInCookie(authToken);

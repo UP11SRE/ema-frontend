@@ -1,7 +1,6 @@
 import React from 'react';
 import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
-import Upload from '../components/Upload';
-import Query from '../components/Query';
+import Read from './Read';
 import GetAll from '../components/Getalldata';
 
 const Dashboard = () => {
@@ -25,15 +24,13 @@ const Dashboard = () => {
           <Row>
             <Col md={2} className="bg-light d-flex flex-column justify-content-between">
               <Nav className="flex-column">
-                <Nav.Link href="/dashboard/upload">Upload</Nav.Link>
-                <Nav.Link href="/dashboard/query">Query</Nav.Link>
-                <Nav.Link href="/dashboard/getall">Get All Data</Nav.Link>
+                <Nav.Link href="/dashboard/read">Read</Nav.Link>
+                <Nav.Link href="/dashboard/getall">Get All Files</Nav.Link>
               </Nav>
             </Col>
             <Col md={10}>
               {/* Conditionally render Upload or Query component based on selected route */}
-              {window.location.pathname === '/dashboard/upload' && <Upload />}
-              {window.location.pathname === '/dashboard/query' && <Query />}
+              {window.location.pathname === '/dashboard/read' && <Read />}
               {window.location.pathname === '/dashboard/getall' && <GetAll />}
               {/* Placeholder for Query component (to be added later) */}
             </Col>
