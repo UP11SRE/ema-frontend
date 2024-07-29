@@ -1,10 +1,11 @@
+
+
 import React, { useState, useEffect } from 'react';
 import { Button, Table, Modal } from 'react-bootstrap';
 import axios from 'axios';
 import * as XLSX from 'xlsx';
 import Papa from 'papaparse';
 import { toast } from 'react-toastify'; // Import toast
-
 
 const Read = () => {
   const [files, setFiles] = useState([]);
@@ -19,14 +20,21 @@ const Read = () => {
       .map((c) => c.trim())
       .find((c) => c.startsWith("auth_token="));
 
-    token = token.split('=')[1];
+    token = token ? token.split('=')[1] : '';
 
     try {
       const response = await axios.get(
         `${'http://localhost:8000'}/api/files/getall/`, // Replace with your API endpoint
         { headers: { Authorization: `token ${token}` } },
       );
-      setFiles(response.data);
+
+      // Remove duplicate files based on the file ID
+      const uniqueFiles = Array.from(new Set(response.data.map(file => file.id)))
+        .map(id => {
+          return response.data.find(file => file.id === id);
+        });
+
+      setFiles(uniqueFiles);
       setLoading(false);
     } catch (error) {
       console.error('Data fetch failed:', error);
@@ -44,7 +52,7 @@ const Read = () => {
       .map((c) => c.trim())
       .find((c) => c.startsWith("auth_token="));
 
-    token = token.split('=')[1];
+    token = token ? token.split('=')[1] : '';
 
     axios.get(`${'http://localhost:8000'}/api/files/read/${fileId}/`, {
       headers: { Authorization: `token ${token}` },
@@ -95,24 +103,25 @@ const Read = () => {
       setFileType(fileType);
       setShowModal(true);
     })
-    .catch(error => {if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      if (error.response.status === 403) {
-        toast.error('Access forbidden: You do not have permission to view this file.');
-      } else if (error.response.status === 404) {
-        toast.error('File not found: The requested file does not exist.');
+    .catch(error => {
+      if (error.response) {
+        // The request was made and the server responded with a status code
+        // that falls out of the range of 2xx
+        if (error.response.status === 403) {
+          toast.error('Access forbidden: You do not have permission to view this file.');
+        } else if (error.response.status === 404) {
+          toast.error('File not found: The requested file does not exist.');
+        } else {
+          toast.error('An error occurred while fetching the file.');
+        }
+      } else if (error.request) {
+        // The request was made but no response was received
+        toast.error('No response received from the server.');
       } else {
-        toast.error('An error occurred while fetching the file.');
+        // Something happened in setting up the request that triggered an Error
+        toast.error('An error occurred while setting up the request.');
       }
-    } else if (error.request) {
-      // The request was made but no response was received
-      toast.error('No response received from the server.');
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      toast.error('An error occurred while setting up the request.');
-    }
-  });
+    });
   };
 
   const renderFileContent = () => {
