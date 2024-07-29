@@ -23,7 +23,7 @@ This project is a frontend application for Google Drive File Picker and reader b
 
 ## Getting Started
 
-1. Clone this repository.
+1. Clone this repository. -- cd ema-frontend
 2. Install dependencies: `npm install`
 3. Run the development server: `npm run develop`
 4. This will start the application at `http://localhost:5173/`
