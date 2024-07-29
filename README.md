@@ -30,6 +30,8 @@ This project is a frontend application for Google Drive File Picker and reader b
 
 ## Backend Integration:
 
+- Backend Github Repo : https://github.com/UP11SRE/ema_backend.git
+
 - The Backend of this Frontend React App is hosted locally and can be accessed at `http://localhost:8000/`.
 
 ## Contributing
